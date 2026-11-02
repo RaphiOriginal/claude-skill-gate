@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          { "type": "command", "command": "$HOME/.claude/hooks/skill-gate.sh", "timeout": 600, "onFailure": "block" }
+        ]
+      },
+      {
+        "matcher": "Read|Edit|Write|Glob|Grep|NotebookEdit|Bash",
+        "hooks": [
+          { "type": "command", "command": "$HOME/.claude/hooks/skill-gate.sh --guard", "timeout": 10 }
+        ]
+      }
+    ]
+  }
+}
