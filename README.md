@@ -73,7 +73,7 @@ binary bundled with the app, which has its **own** login. Find it and log in wit
 
 ```bash
 mkdir -p ~/.claude/hooks
-curl -fsSL https://raw.githubusercontent.com/OWNER/claude-skill-gate/main/hooks/skill-gate.sh -o ~/.claude/hooks/skill-gate.sh
+curl -fsSL https://raw.githubusercontent.com/RaphiOriginal/claude-skill-gate/main/hooks/skill-gate.sh -o ~/.claude/hooks/skill-gate.sh
 chmod +x ~/.claude/hooks/skill-gate.sh
 ```
 
@@ -85,7 +85,7 @@ Add the two `PreToolUse` entries from [`settings.example.json`](settings.example
 `~/.claude/settings.json`. This command appends them and keeps any hooks you already have:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/OWNER/claude-skill-gate/main/settings.example.json -o /tmp/skill-gate-settings.json
+curl -fsSL https://raw.githubusercontent.com/RaphiOriginal/claude-skill-gate/main/settings.example.json -o /tmp/skill-gate-settings.json
 [ -f ~/.claude/settings.json ] || echo '{}' > ~/.claude/settings.json
 cp ~/.claude/settings.json ~/.claude/settings.json.bak
 jq --slurpfile new /tmp/skill-gate-settings.json '.hooks.PreToolUse = ((.hooks.PreToolUse // []) + $new[0].hooks.PreToolUse)' ~/.claude/settings.json.bak > ~/.claude/settings.json
@@ -119,7 +119,7 @@ rm -rf ~/.claude/skills/gate-test
 Paste this into Claude Code (or another agent that uses Claude Code skills):
 
 ````text
-Install the claude-skill-gate hook from https://github.com/OWNER/claude-skill-gate on this machine.
+Install the claude-skill-gate hook from https://github.com/RaphiOriginal/claude-skill-gate on this machine.
 It scans every Claude Code skill with NVIDIA SkillSpector before first use and blocks unsafe ones.
 
 Follow the repo README's "Install" section, and:
