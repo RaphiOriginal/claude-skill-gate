@@ -211,3 +211,7 @@ Remove the two `skill-gate.sh` entries from `~/.claude/settings.json`, then:
 rm ~/.claude/hooks/skill-gate.sh ~/.claude/skill-scan-ledger.json
 rm -rf ~/tools/SkillSpector ~/.local/bin/skillspector
 ```
+
+## License
+
+[MIT](LICENSE). SkillSpector is a separate project by NVIDIA under its own license.
